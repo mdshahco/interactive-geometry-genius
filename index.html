@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometry Genius</title>
+  <!-- daisyUI cdn  -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- fontawesome file -->
+<!-- font awesome file -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+</head>
+<body class="container md:mx-auto">
+  <!-- header section  -->
+<header>
+  <!-- navbar -->
+  <div class="navbar bg-sky-100 rounded-md my-12">
+    <div class="navbar-start">
+      <a class="my-5 mx-2 md:mx-10 lg:mx-10">
+        <p class="font-bold text-4xl">Interactive</p>
+        <p class="font-light text-3xl">Geometry Genius</p>
+      </a>
+    </div>
+    
+    <div class="navbar-end mx-2 md:mx-10 lg:mx-10 my-12">
+      <a class="btn btn-info text-white" href="blog.html">Blog</a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="flex flex-col md:flex-row lg:flex-row gap-2">
+    <div class="geometry-cards grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:w-[75%] lg:w-[75%]">
+      <!--! card-1 -->
+      <div class="card w-full bg-base-100 shadow-md rounded" onclick="card1Bg()">
+        <figure class="px-10 pt-10">
+          <img src="/images/triangle.png" alt="triangle" class="rounded-xl w-full h-48" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title" id="triangle">Triangle</h2>
+          <p>
+            Area (A) = 0.5 <span>&#215;</span> b <span>&#215;</span> h
+          </p>
+            <table class="mb-4">
+              <tr>
+                <td><input id="base-input" type="text" placeholder="b" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td class="pr-3">cm</td>
+                <td><input id="height-input" type="text" placeholder="h" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td>cm</td>
+              </tr>
+            </table>
+          <div class="card-actions">
+            <button id="triangle-btn" class="btn btn-info text-white btn-wide normal-case">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!--! card-2 -->
+      <div class="card w-full bg-base-100 shadow-md rounded" onclick="card2Bg()">
+        <figure class="px-10 pt-10">
+          <img src="/images/rectangle.png" alt="rectangle" class="rounded-xl w-full h-48" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 id="rectangle" class="card-title">Rectangle</h2>
+          <p>
+            Area (A) =  w <span>&#215;</span> l
+          </p>
+            <table class="mb-4">
+              <tr>
+                <td><input id="width-input" type="text" placeholder="w" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td class="pr-3">cm</td>
+                <td><input id="length-input" type="text" placeholder="l" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td>cm</td>
+              </tr>
+            </table>
+          <div class="card-actions">
+            <button id="rectangle-btn" class="btn btn-info text-white btn-wide normal-case">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!--! card-3 -->
+      <div class="card w-full bg-base-100 shadow-md rounded" onclick="card3Bg()">
+        <figure class="px-10 pt-10">
+          <img src="/images/parallelogram.png" alt="Parallelogram" class="rounded-xl w-full h-48" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title" id="parallelogram">Parallelogram</h2>
+          <p>
+            Area (A) = 0.5 <span>&#215;</span> b <span>&#215;</span> h
+          </p>
+            <table class="mb-4">
+              <tr>
+                <td><input id="parallelogram-base-input" type="text" placeholder="b" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td class="pr-3">cm</td>
+                <td><input id="parallelogram-height-input" type="text" placeholder="h" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td>cm</td>
+              </tr>
+            </table>
+          <div class="card-actions">
+            <button id="parallelogram-btn" class="btn btn-info text-white btn-wide normal-case ">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!--! card-4 -->
+      <div class="card w-full bg-base-100 shadow-md rounded" onclick="card4Bg()">
+        <figure class="px-10 pt-10">
+          <img src="/images/rhombus.png" alt="Rhombus" class="rounded-xl w-full h-48" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 id="rhombus" class="card-title">Rhombus</h2>
+          <p>
+            Area (A) = 0.5 <span>&#215;</span> d<sub>1</sub><span>&#215;</span> d<sub>2</sub>
+          </p>
+            <table class="mb-4">
+              <tr>
+                <td><input id="d1" type="text" placeholder="d1 " class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td class="pr-3">cm</td>
+                <td><input id="d2" type="text" placeholder="d2" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td>cm</td>
+              </tr>
+            </table>
+          <div class="card-actions">
+            <button id="rhombus-btn" class="btn btn-info text-white btn-wide normal-case">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!--! card-5 -->
+      <div class="card w-full bg-base-100 shadow-md rounded" onclick="card5Bg()">
+        <figure class="px-10 pt-10">
+          <img src="/images/pentagon.png" alt="Pentagon" class="rounded-xl w-full h-48" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 id="pentagon" class="card-title">Pentagon</h2>
+          <p>
+            Area (A) = 5/2 <span>&#215;</span> s <span>&#215;</span></span> a
+          </p>
+            <table class="mb-4">
+              <tr>
+                <td><input id="side-input" type="text" placeholder="s" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td class="pr-3">cm</td>
+                <td><input id="apothem-input" type="text" placeholder="a" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td>cm</td>
+              </tr>
+            </table>
+          <div class="card-actions">
+            <button id="pentagon-btn" class="btn btn-info text-white btn-wide normal-case">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!--! card-6 -->
+      <div class="card w-full bg-base-100 shadow-md rounded" onclick="card6Bg()">
+        <figure class="px-10 pt-10">
+          <img src="/images/ellipse.png" alt="ellipse" class="rounded-xl w-full h-48" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 id="ellipse" class="card-title">Ellipse</h2>
+          <p>
+            Area (A) = <span>&#960;</span>ab
+          </p>
+            <table class="mb-4">
+              <tr>
+                <td><input id="a" type="text" placeholder="a" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td class="pr-3">cm</td>
+                <td><input id="b" type="text" placeholder="b" class="input rounded input-sm w-full max-w-xs bg-base-200"></td>
+                <td>cm</td>
+              </tr>
+            </table>
+          <div class="card-actions">
+            <button id="ellipse-btn" class="btn btn-info text-white btn-wide normal-case">Calculate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- !area calcutaion -->
+    <div class="area-calculation w-full md:w-[25%] lg:w-[25%]">
+      <div class="card w-full bg-base-100 shadow-md rounded pb-48">
+        <p class="font-bold underline text-center text-2xl">Area Calculation</p>
+        <div class="overflow-x-auto">
+          <table class="table w-full text-xs">
+            <thead>
+            </thead>
+            <tbody id="table-container">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+
+
+  </section>
+</main>
+
+
+
+
+
+
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+</html>
